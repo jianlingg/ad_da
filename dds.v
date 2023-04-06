@@ -1,4 +1,4 @@
-module DDS_module (
+module dds (
     //global clock
     input  clk,
     input  rst_n,

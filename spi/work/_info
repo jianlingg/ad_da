@@ -1,0 +1,64 @@
+m255
+K4
+z2
+!s11f vlog 2019.2 2019.04, Apr 17 2019
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/modeltech64_2019.2/examples
+T_opt
+!s110 1681378350
+Vfz[@Be@kbcich2fD_fzzI1
+04 8 4 work spi_m_tb fast 0
+=1-e0d55ee483ee-6437cc2e-233-43c8
+o-quiet -auto_acc_if_foreign -work work +acc
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2019.2;69
+vspi_m
+Z1 !s110 1681378348
+!i10b 1
+!s100 ]9UG`<SfB7G:0L4jhYQ9_3
+!s11b [4ZK[KH16iNT;6Z>MER=Z2
+I0j>bc@CCb<L@W<jF8fMSh1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dE:/amy_code/dac/ad_da/spi
+w1681362046
+8spi_m.v
+Fspi_m.v
+L0 8
+Z4 OL;L;2019.2;69
+r1
+!s85 0
+31
+Z5 !s108 1681378348.000000
+!s107 spi_m.v|
+!s90 -reportprogress|300|spi_m.v|
+!i113 0
+Z6 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vspi_m_tb
+R1
+!i10b 1
+!s100 4?P]HhTPnR3=NSJjaQziK3
+!s11b 0:8?[RmXa_QibFg@@mcjA3
+I:d0NNmHTeldYbkcUeCBLk2
+R2
+R3
+w1681378343
+8spi_m_tb.v
+Fspi_m_tb.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 spi_m_tb.v|
+!s90 -reportprogress|300|spi_m_tb.v|
+!i113 0
+R6
+R0

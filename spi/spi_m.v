@@ -1,7 +1,8 @@
 `timescale 1ns/1ns
 /*模块说明
-发：该模块接收32位信号，在收到writ_flag后串行输出到spi的从设备
-收：该模块收到read_flag后，cs拉低，并接收从设备的串行信号，转化为16位并行输出，
+发：该模块接收32位命令，在收到writ_flag后串行输出到spi的从设备
+收：该模块收到read_flag后，cs拉低，并接收从设备的16位串行数据，转化为16位并行输出，
+简而言之，该模块就是一个串并，并串的转换模块。
 
 */
 module spi_m (
@@ -10,32 +11,40 @@ module spi_m (
     input rst_n,
 
     //user interface
+    input         cs_key, //控制片选信号高低的按键
+
     input         read_flag,
     input         writ_flag,
-    input  [31:0] writ_data,
 
-    output [15:0] read_data,
+    input      [31:0] writ_data,
+    output reg [32:0] read_data,
+    output        rdy,
 
-    //与从设备连接的信号
-    input        rvs,
-    input        sclk,
-    input        miso,
-    output reg   sc_n,
-    output reg   mosi
+    //与从ADC连接的信号
+    input         miso,
+    output        sclk,
+    output reg    cs_n,
+    output reg    mosi
 );
 //前置信号
 //---------------------------------------------------------------------
+
+    reg [31:0] writ_data_tmp;
+    reg [5:0] cnt;
+    wire end_cnt;
+    wire add_cnt;
+
     wire idle_to_read_start ;
     wire idle_to_writ_start ;
     wire read_to_idle_start ;
     wire writ_to_idle_start ;
     reg [1:0] state_c, state_n;
-    reg [4:0] x;
 
 
     localparam  idle = 1;
     localparam  read = 2;
     localparam  writ = 3;
+
 
 
     always @(posedge clk or negedge rst_n) begin
@@ -76,27 +85,7 @@ module spi_m (
     assign read_to_idle_start = state_c==read && (end_cnt);
     assign writ_to_idle_start = state_c==writ && (end_cnt);
 
-    //变量选择器
-    always  @(*)begin
-       case(state_c)
-          read:      begin    x=16;      end
-          writ:      begin    x=32;      end
-          default:   begin    x=32;      end
-       endcase
-    end
 
-    //加一条件
-    always  @(posedge clk or negedge rst_n)begin
-        if(!rst_n)begin
-            flag_add <= 0;
-        end
-        else if(writ_flag)begin
-            flag_add <= 1;
-        end
-        else if(end_cnt)begin 
-            flag_add <= 0;
-        end
-    end
 
     //计数器
     always @(posedge clk or negedge rst_n)begin
@@ -111,41 +100,56 @@ module spi_m (
           end      
     end
 
-    assign add_cnt = flag_add;
-    assign end_cnt = add_cnt && cnt == x-1;
+    assign add_cnt = state_c == writ || state_c == read;
+    assign end_cnt = add_cnt && cnt == 32-1;
+
+    //暂存命令
+    always  @(posedge clk or negedge rst_n)begin
+        if(!rst_n)begin
+            writ_data_tmp <= 0;
+        end
+        else if(writ_flag)begin
+            writ_data_tmp <= writ_data;
+        end
+    end
     
 
 //Pin信号
 //---------------------------------------------------------------------
-//将并行命令转换为spi的串行输出：mosi 先发高位
+
+assign sclk = clk;
+
+//按键控制片选信号
 always  @(posedge clk or negedge rst_n)begin
     if(!rst_n)begin
-        mosi <= 0;
+        cs_n <= 1;
     end
-    else if(add_cnt0)begin
-        mosi <=writ_data[31-cnt]
+    else if (cs_key) begin
+        cs_n <= !cs_n;
     end
 end
 
+//将并行命令转换为spi的串行输出：mosi 先发高位
+always  @(*)begin
+    if(add_cnt && state_c == writ)begin
+        mosi <= writ_data_tmp[31-cnt];
+    end
+    else begin
+        mosi <= 32'bz;
+    end
+end
+
+assign rdy = !(state_c == writ);
 
 //dout  miso：先发高位
-always  @(posedge clk or negedge rst_n)begin
-    if(!rst_n)begin
-        read_data <= 0;
+always  @(*)begin
+    if(add_cnt && state_c == read)begin
+        read_data[32-cnt] <= miso;
     end
-    else if(add_cnt)begin
-        read_data[15-cnt] <= miso;
+    else begin
+        read_data <= 32'bz;
     end
 end
 
-//
-always  @(posedge clk or negedge rst_n)begin
-    if(!rst_n)begin
-        cs <= 1;
-    end
-    else if(idle_to_read_start || idle_to_writ_start)begin
-        cs <= 0;
-    end
-end
     
 endmodule

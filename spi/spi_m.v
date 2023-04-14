@@ -11,19 +11,17 @@ module spi_m (
     input rst_n,
 
     //user interface
-    input         cs_key, //控制片选信号高低的按键
+//---------------------------------------------------------------------
+    input         read_flag,  //读取ADC标志
+    input         writ_flag,  //写入ADC标志
 
-    input         read_flag,
-    input         writ_flag,
+    input      [31:0] writ_data,  //写入命令
+    output reg [31:0] read_data,  //读取ADC所采集的数据
 
-    input      [31:0] writ_data,
-    output reg [32:0] read_data,
-    output        rdy,
-
+//---------------------------------------------------------------------
     //与从ADC连接的信号
     input         miso,
-    output        sclk,
-    output reg    cs_n,
+
     output reg    mosi
 );
 //前置信号
@@ -44,6 +42,11 @@ module spi_m (
     localparam  idle = 1;
     localparam  read = 2;
     localparam  writ = 3;
+
+    reg clk_en;
+    reg  [1:0] edges;
+    wire cs_up = edges == 2'b01;
+    wire cs_dw = edges == 2'b10;
 
 
 
@@ -112,44 +115,31 @@ module spi_m (
             writ_data_tmp <= writ_data;
         end
     end
-    
 
 //Pin信号
 //---------------------------------------------------------------------
 
-assign sclk = clk;
+    //将并行命令转换为spi的串行输出：mosi 先发高位
+    always  @(*)begin
+        if(add_cnt && state_c == writ)begin
+            mosi <= writ_data_tmp[31-cnt];
+        end
+        else begin
+            mosi <= 32'bz;
+        end
+    end
 
-//按键控制片选信号
-always  @(posedge clk or negedge rst_n)begin
-    if(!rst_n)begin
-        cs_n <= 1;
-    end
-    else if (cs_key) begin
-        cs_n <= !cs_n;
-    end
-end
+    assign rdy = !(state_c == writ);
 
-//将并行命令转换为spi的串行输出：mosi 先发高位
-always  @(*)begin
-    if(add_cnt && state_c == writ)begin
-        mosi <= writ_data_tmp[31-cnt];
+    //dout  miso：先发高位
+    always  @(*)begin
+        if(add_cnt && state_c == read)begin
+            read_data[32-cnt] <= miso;
+        end
+        else begin
+            read_data <= 32'bz;
+        end
     end
-    else begin
-        mosi <= 32'bz;
-    end
-end
-
-assign rdy = !(state_c == writ);
-
-//dout  miso：先发高位
-always  @(*)begin
-    if(add_cnt && state_c == read)begin
-        read_data[32-cnt] <= miso;
-    end
-    else begin
-        read_data <= 32'bz;
-    end
-end
 
     
 endmodule

@@ -55,7 +55,7 @@ module spi_m_tb;
     //与从ADC连接的信号
     . sclk(sclk),
     . miso(miso),
-    . cs_n(sc_n),
+    . cs(sc_n),
     . mosi(mosi)
 );
 
@@ -81,7 +81,7 @@ module spi_m_tb;
         cs_key    = 0;
         read_flag = 0;
         writ_flag = 0;
-        writ_data = 32'b10101010101010101010101010101010;
+        writ_data = 32'b10101010101010101010101010101000;
         #(CYCLE*10);
         writ_flag = 1;
         cs_key    = 1;

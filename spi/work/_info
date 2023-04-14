@@ -8,57 +8,188 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dD:/modeltech64_2019.2/examples
+Z0 dD:/modeltech64_2019.2/examples
 T_opt
-!s110 1681378350
-Vfz[@Be@kbcich2fD_fzzI1
+!s110 1681436991
+V4LJJS>a0OX[58:m_K]beG2
 04 8 4 work spi_m_tb fast 0
-=1-e0d55ee483ee-6437cc2e-233-43c8
-o-quiet -auto_acc_if_foreign -work work +acc
-Z0 tCvgOpt 0
+=1-e0d55ee483ee-6438b13f-34d-2960
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
 n@_opt
-OL;O;2019.2;69
-vspi_m
-Z1 !s110 1681378348
-!i10b 1
-!s100 ]9UG`<SfB7G:0L4jhYQ9_3
-!s11b [4ZK[KH16iNT;6Z>MER=Z2
-I0j>bc@CCb<L@W<jF8fMSh1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dE:/amy_code/dac/ad_da/spi
-w1681362046
-8spi_m.v
-Fspi_m.v
-L0 8
-Z4 OL;L;2019.2;69
-r1
-!s85 0
-31
-Z5 !s108 1681378348.000000
-!s107 spi_m.v|
-!s90 -reportprogress|300|spi_m.v|
-!i113 0
-Z6 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z3 OL;O;2019.2;69
 R0
-vspi_m_tb
+T_opt1
+!s110 1681435221
+V1CF7>cE]R^mPZgejc]`2<2
+04 9 4 work clk_en_tb fast 0
+=1-e0d55ee483ee-6438aa55-2c2-3df8
 R1
-!i10b 1
-!s100 4?P]HhTPnR3=NSJjaQziK3
-!s11b 0:8?[RmXa_QibFg@@mcjA3
-I:d0NNmHTeldYbkcUeCBLk2
 R2
+n@_opt1
 R3
-w1681378343
-8spi_m_tb.v
-Fspi_m_tb.v
+R0
+T_opt2
+!s110 1681464434
+VXbhkQ^JNhzz3U1i^MCYj^2
+04 6 4 work adc_tb fast 0
+=1-e0d55ee483ee-64391c72-1e3-7b8
+R1
+R2
+n@_opt2
+R3
+v_tb
+!s110 1681464198
+!i10b 1
+!s100 6kA6I8BaXHW6z=UgJnWTB1
+Z4 !s11b UTSkk1j6_Af_XE=agTiNN1
+Il6jWN^9SDnR?5Ke>144<B3
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 dE:/amy_code/dac/ad_da/spi
+w1681464192
+Z7 8E:/amy_code/dac/ad_da/spi/adc_tb.v
+Z8 FE:/amy_code/dac/ad_da/spi/adc_tb.v
 L0 2
-R4
+Z9 OL;L;2019.2;69
 r1
 !s85 0
 31
-R5
-!s107 spi_m_tb.v|
-!s90 -reportprogress|300|spi_m_tb.v|
+!s108 1681464198.000000
+Z10 !s107 E:/amy_code/dac/ad_da/spi/adc_tb.v|
+Z11 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/adc_tb.v|
 !i113 0
+Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@_tb
+vadc
+Z13 !s110 1681464429
+!i10b 1
+!s100 maUlj6HHD5EA?6FhdEM_h1
+!s11b gZE>4>F8<Ll::[eC=Q^e21
+IUY]aOXIE]gm:2:3D=CJVR2
+R5
 R6
-R0
+w1681464424
+8E:/amy_code/dac/ad_da/spi/adc.v
+FE:/amy_code/dac/ad_da/spi/adc.v
+L0 5
+R9
+r1
+!s85 0
+31
+Z14 !s108 1681464429.000000
+!s107 E:/amy_code/dac/ad_da/spi/adc.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/adc.v|
+!i113 0
+R12
+R2
+vadc_tb
+R13
+!i10b 1
+!s100 1NSY5[3T>eMlR2Ec]nEn03
+R4
+IVi^TjVUKeAYoDl2k[Y2jf2
+R5
+R6
+w1681464219
+R7
+R8
+L0 2
+R9
+r1
+!s85 0
+31
+R14
+R10
+R11
+!i113 0
+R12
+R2
+vclk_en
+Z15 !s110 1681436984
+!i10b 1
+!s100 3L3L=9VlmU:Q=Q0K0gVFT3
+!s11b KY[jK:Z2WPQOgJPKeD`oh3
+IL[mi49X72KLz0R3V2dd`01
+R5
+R6
+w1681435194
+8E:/amy_code/dac/ad_da/spi/clk_en.v
+FE:/amy_code/dac/ad_da/spi/clk_en.v
+L0 5
+R9
+r1
+!s85 0
+31
+Z16 !s108 1681436984.000000
+!s107 E:/amy_code/dac/ad_da/spi/clk_en.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/clk_en.v|
+!i113 0
+R12
+R2
+vclk_en_tb
+R15
+!i10b 1
+!s100 ELC6zKKI0f>;=U>6Ji<@I0
+!s11b EEc7Lo3FHUcb;cQ=Z43gP2
+IdQRElOiUmez?B:=GKKhFQ0
+R5
+R6
+w1681434502
+8E:/amy_code/dac/ad_da/spi/clk_en_tb.v
+FE:/amy_code/dac/ad_da/spi/clk_en_tb.v
+L0 2
+R9
+r1
+!s85 0
+31
+R16
+!s107 E:/amy_code/dac/ad_da/spi/clk_en_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/clk_en_tb.v|
+!i113 0
+R12
+R2
+vspi_m
+R15
+!i10b 1
+!s100 zj8SUMjUC>cF?>AkjgWK22
+!s11b G89z^TG;J[VI61c8YKT5A0
+IQfF:E<?LlF2@Y1i^QXkgX2
+R5
+R6
+w1681436826
+8E:/amy_code/dac/ad_da/spi/spi_m.v
+FE:/amy_code/dac/ad_da/spi/spi_m.v
+L0 8
+R9
+r1
+!s85 0
+31
+R16
+!s107 E:/amy_code/dac/ad_da/spi/spi_m.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/spi_m.v|
+!i113 0
+R12
+R2
+vspi_m_tb
+R15
+!i10b 1
+!s100 ZX[T:QjCVU@OF@<:B<ah@0
+!s11b SCmO[miU>meIh75D9g5[^1
+I`6O@bkVABm6YFUXK_W@BY0
+R5
+R6
+w1681436970
+8E:/amy_code/dac/ad_da/spi/spi_m_tb.v
+FE:/amy_code/dac/ad_da/spi/spi_m_tb.v
+L0 2
+R9
+r1
+!s85 0
+31
+R16
+!s107 E:/amy_code/dac/ad_da/spi/spi_m_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/spi_m_tb.v|
+!i113 0
+R12
+R2

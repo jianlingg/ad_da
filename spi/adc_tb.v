@@ -44,6 +44,9 @@ module adc_tb;
    reg [10:0] cnt;
    wire add_cnt;
    wire end_cnt;
+   reg [10:0] cnt1;
+    wire add_cnt1;
+    wire end_cnt1;
 
 
 
@@ -75,9 +78,9 @@ always @(posedge clk or negedge rst_n)begin
 end
 
 assign add_cnt = !cs;
-assign end_cnt = add_cnt && cnt == 50-1;
+assign end_cnt = add_cnt && cnt == 100-1;
 
-reg [15:0] ex = 16'b1011_1111_1111_1111;
+reg [15:0] ex = 16'b1011_1111_1111_1111;//捕获到的数据
 always  @(*)begin
     if(add_cnt && cnt < 16)begin
         miso <= ex[15-cnt];
@@ -87,14 +90,28 @@ always  @(*)begin
     end
 end
 
+//计数器1
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt1 <= 0;
+      end
+    else if(add_cnt1)begin
+      if(end_cnt1)
+         cnt1 <= 0;
+      else
+         cnt1 <= cnt1 + 1;
+      end      
+end
 
+assign add_cnt1 = cs;
+assign end_cnt1 = add_cnt1 && cnt1 == 50-1;
 
 //
     always  @(posedge clk or negedge rst_n)begin
         if(!rst_n)begin
             rvs <= 1;
         end
-        else if(end_cnt)begin
+        else if(end_cnt1)begin
             rvs <= 1;
         end
         else begin
@@ -102,15 +119,4 @@ end
         end
     end
 
-    //产生输入信号
-    initial begin
-        for (i = 0; i<1000 ;i = i+1 ) begin
-            if(i<143)begin
-                #1;
-            end
-            else begin
-                i = 0;
-            end
-        end
-    end
 endmodule

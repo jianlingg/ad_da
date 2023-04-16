@@ -2,13 +2,16 @@
 module adc_tb;
     //global clock
     reg            clk         ;
-    reg  rsts;
+    reg            rsts;
     reg            rst_n       ;
 
     //user interface
     reg rvs;
+    reg miso;
+    wire [15:0]dout;
     wire cs;
     wire sclk;
+    wire mosi;
     
 
     //时钟周期，单位为ns，可在此修改时钟周期。
@@ -21,46 +24,77 @@ module adc_tb;
         rst_n <= rsts;
     end
 
-    //待测试的模块例化
+//待测试的模块例化
     adc adc_u(
     //global clock
     .clk(clk),
     .rst_n(rst_n),
 
     //user interface
+    .dout(dout),
 
-//---------------------------------------------------------------------
+    //---------------------------------------------------------------------
     .rvs(rvs),
+    .miso(miso),
     .cs(cs),
-    .sclk(sclk)
+    .sclk(sclk),
+    .mosi(mosi)//就是SDI
 );
    reg [33:0] i;
+   reg [10:0] cnt;
+   wire add_cnt;
+   wire end_cnt;
 
-   always  @(posedge clk)begin
-       
-   end
 
-    //生成本地时钟50M
+
+//生成本地时钟50M
     initial clk = 1;
     always #(CYCLE/2) clk=~clk;
     
-
     //产生复位信号
     initial begin
-        rst_n = 1;
+        rsts= 1;
         #2;
-        rst_n = 0;
+        rsts = 0;
         #(CYCLE*RST_TIME);
-        rst_n = 1;
+        rsts = 1;
     end
 
 
-    //
+//计数器
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt <= 0;
+    end
+    else if(add_cnt)begin
+      if(end_cnt)
+         cnt <= 0;
+      else
+         cnt <= cnt + 1;
+      end      
+end
+
+assign add_cnt = !cs;
+assign end_cnt = add_cnt && cnt == 50-1;
+
+reg [15:0] ex = 16'b1011_1111_1111_1111;
+always  @(*)begin
+    if(add_cnt && cnt < 16)begin
+        miso <= ex[15-cnt];
+    end
+    else begin
+        miso <= 1'bz;
+    end
+end
+
+
+
+//
     always  @(posedge clk or negedge rst_n)begin
         if(!rst_n)begin
             rvs <= 1;
         end
-        else if(i == 99)begin
+        else if(end_cnt)begin
             rvs <= 1;
         end
         else begin
@@ -71,7 +105,7 @@ module adc_tb;
     //产生输入信号
     initial begin
         for (i = 0; i<1000 ;i = i+1 ) begin
-            if(i<100)begin
+            if(i<143)begin
                 #1;
             end
             else begin

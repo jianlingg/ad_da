@@ -8,10 +8,13 @@ module adc (
     input rst_n,
 
     //user interface
+    output reg [15:0] dout,
 
 //---------------------------------------------------------------------
-    input rvs,
-    output reg cs,
+    input         rvs,
+    input         miso,
+    output reg    cs,
+    output reg    mosi,
 
     output sclk
 );
@@ -26,6 +29,10 @@ module adc (
     reg [10:0] cnt;
     wire add_cnt;
     wire end_cnt;
+    reg [10:0] cnt1;
+    wire add_cnt1;
+    wire end_cnt1;
+    reg flag_add;
 
 assign sclk = cs ? 1'b0 : !clk;
 // 状态机
@@ -47,27 +54,27 @@ assign sclk = cs ? 1'b0 : !clk;
     end
 
     always @(*) begin
-    case(state_c)
-        rst :begin
-            if(rst_to_acq_start)
-                state_n = acq ;
-            else
-                state_n = state_c ;
-        end
-        acq :begin
-            if(acq_to_cov_start)
-                state_n = cov ;
-            else
-                state_n = state_c ;
-        end
-        cov :begin
-            if(cov_to_acq_start)
-                state_n = acq ;
-            else
-                state_n = state_c ;
-        end
-        default : state_n = rst ;
-    endcase
+        case(state_c)
+            rst :begin
+                if(rst_to_acq_start)
+                    state_n = acq ;
+                else
+                    state_n = state_c ;
+            end
+            acq :begin
+                if(acq_to_cov_start)
+                    state_n = cov ;
+                else
+                    state_n = state_c ;
+            end
+            cov :begin
+                if(cov_to_acq_start)
+                    state_n = acq ;
+                else
+                    state_n = state_c ;
+            end
+            default : state_n = rst ;
+        endcase
     end
 
 assign rst_to_acq_start = state_c==rst && (rst_n);
@@ -91,6 +98,35 @@ assign cov_to_acq_start = state_c==cov && (rvs);
 assign add_cnt = state_c == acq;
 assign end_cnt = add_cnt && cnt == t_acq-1;
 
+//计数器1
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt1 <= 0;
+      end
+    else if(add_cnt1)begin
+      if(end_cnt1)
+         cnt1 <= 0;
+      else
+         cnt1 <= cnt1 + 1;
+      end      
+end
+
+assign add_cnt1 = flag_add;
+assign end_cnt1 = add_cnt1 && cnt1 == 32-1;
+
+//加一条件
+always  @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        flag_add <= 0;
+    end
+    else if(rst_to_acq_start || cov_to_acq_start)begin
+        flag_add <= 1;
+    end
+    else if(end_cnt1)begin 
+        flag_add <= 0;
+    end
+end
+
 
 //cs
 always  @(posedge clk or negedge rst_n)begin
@@ -105,6 +141,30 @@ always  @(posedge clk or negedge rst_n)begin
     end       
 end
 
+
+
+//
+always  @(posedge sclk or negedge rst_n)begin
+    if(!rst_n)begin
+        dout <= 0;
+    end
+    else if(add_cnt && cnt < 16)begin
+        dout[15-cnt] <= miso;
+    end
+end
+
+
+
+
+//将并行命令转换为spi的串行输出：mosi 先发高位
+    always  @(*)begin
+        if(flag_add )begin
+            mosi <= reah[31-cnt1];
+        end
+        else begin
+            mosi <= 32'bz;
+        end
+    end
 
 
 

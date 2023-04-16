@@ -1,7 +1,7 @@
 m255
 K4
 z2
-!s11f vlog 2019.2 2019.04, Apr 17 2019
+!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
@@ -20,176 +20,67 @@ n@_opt
 Z3 OL;O;2019.2;69
 R0
 T_opt1
-!s110 1681435221
-V1CF7>cE]R^mPZgejc]`2<2
-04 9 4 work clk_en_tb fast 0
-=1-e0d55ee483ee-6438aa55-2c2-3df8
+!s110 1681662656
+V8PX<ij]=l<W[dD?X4N2zJ3
+Z4 04 6 4 work adc_tb fast 0
+=1-98e743053f68-643c22c0-2ac-1150
 R1
 R2
 n@_opt1
-R3
-R0
+OL;O;2020.4;71
 T_opt2
 !s110 1681464434
 VXbhkQ^JNhzz3U1i^MCYj^2
-04 6 4 work adc_tb fast 0
+R4
 =1-e0d55ee483ee-64391c72-1e3-7b8
 R1
 R2
 n@_opt2
 R3
-v_tb
-!s110 1681464198
-!i10b 1
-!s100 6kA6I8BaXHW6z=UgJnWTB1
-Z4 !s11b UTSkk1j6_Af_XE=agTiNN1
-Il6jWN^9SDnR?5Ke>144<B3
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 dE:/amy_code/dac/ad_da/spi
-w1681464192
-Z7 8E:/amy_code/dac/ad_da/spi/adc_tb.v
-Z8 FE:/amy_code/dac/ad_da/spi/adc_tb.v
-L0 2
-Z9 OL;L;2019.2;69
-r1
-!s85 0
-31
-!s108 1681464198.000000
-Z10 !s107 E:/amy_code/dac/ad_da/spi/adc_tb.v|
-Z11 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/adc_tb.v|
-!i113 0
-Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
-n@_tb
+R0
 vadc
-Z13 !s110 1681464429
+Z5 !s110 1681662652
 !i10b 1
-!s100 maUlj6HHD5EA?6FhdEM_h1
-!s11b gZE>4>F8<Ll::[eC=Q^e21
-IUY]aOXIE]gm:2:3D=CJVR2
-R5
-R6
-w1681464424
-8E:/amy_code/dac/ad_da/spi/adc.v
-FE:/amy_code/dac/ad_da/spi/adc.v
-L0 5
-R9
+!s100 g=;F3[b3NbIzTS^aYR:@:0
+Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>CU6?mGK1HQX@95ajCz@71
+Z7 dE:/intelFPGA_lite_P/ad_da/spi
+w1681662640
+8E:/intelFPGA_lite_P/ad_da/spi/adc.v
+FE:/intelFPGA_lite_P/ad_da/spi/adc.v
+!i122 45
+L0 5 169
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z14 !s108 1681464429.000000
-!s107 E:/amy_code/dac/ad_da/spi/adc.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/adc.v|
+Z10 !s108 1681662652.000000
+!s107 E:/intelFPGA_lite_P/ad_da/spi/adc.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/intelFPGA_lite_P/ad_da/spi/adc.v|
 !i113 0
-R12
+Z11 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vadc_tb
-R13
-!i10b 1
-!s100 1NSY5[3T>eMlR2Ec]nEn03
-R4
-IVi^TjVUKeAYoDl2k[Y2jf2
 R5
+!i10b 1
+!s100 NLYVWc]BPzPee8U6FlW?@2
 R6
-w1681464219
+I0XF6?cdEoRV]@hBAA8EWW0
 R7
+w1681662534
+8E:/intelFPGA_lite_P/ad_da/spi/adc_tb.v
+FE:/intelFPGA_lite_P/ad_da/spi/adc_tb.v
+!i122 46
+L0 2 115
 R8
-L0 2
 R9
 r1
 !s85 0
 31
-R14
 R10
+!s107 E:/intelFPGA_lite_P/ad_da/spi/adc_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/intelFPGA_lite_P/ad_da/spi/adc_tb.v|
+!i113 0
 R11
-!i113 0
-R12
-R2
-vclk_en
-Z15 !s110 1681436984
-!i10b 1
-!s100 3L3L=9VlmU:Q=Q0K0gVFT3
-!s11b KY[jK:Z2WPQOgJPKeD`oh3
-IL[mi49X72KLz0R3V2dd`01
-R5
-R6
-w1681435194
-8E:/amy_code/dac/ad_da/spi/clk_en.v
-FE:/amy_code/dac/ad_da/spi/clk_en.v
-L0 5
-R9
-r1
-!s85 0
-31
-Z16 !s108 1681436984.000000
-!s107 E:/amy_code/dac/ad_da/spi/clk_en.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/clk_en.v|
-!i113 0
-R12
-R2
-vclk_en_tb
-R15
-!i10b 1
-!s100 ELC6zKKI0f>;=U>6Ji<@I0
-!s11b EEc7Lo3FHUcb;cQ=Z43gP2
-IdQRElOiUmez?B:=GKKhFQ0
-R5
-R6
-w1681434502
-8E:/amy_code/dac/ad_da/spi/clk_en_tb.v
-FE:/amy_code/dac/ad_da/spi/clk_en_tb.v
-L0 2
-R9
-r1
-!s85 0
-31
-R16
-!s107 E:/amy_code/dac/ad_da/spi/clk_en_tb.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/clk_en_tb.v|
-!i113 0
-R12
-R2
-vspi_m
-R15
-!i10b 1
-!s100 zj8SUMjUC>cF?>AkjgWK22
-!s11b G89z^TG;J[VI61c8YKT5A0
-IQfF:E<?LlF2@Y1i^QXkgX2
-R5
-R6
-w1681436826
-8E:/amy_code/dac/ad_da/spi/spi_m.v
-FE:/amy_code/dac/ad_da/spi/spi_m.v
-L0 8
-R9
-r1
-!s85 0
-31
-R16
-!s107 E:/amy_code/dac/ad_da/spi/spi_m.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/spi_m.v|
-!i113 0
-R12
-R2
-vspi_m_tb
-R15
-!i10b 1
-!s100 ZX[T:QjCVU@OF@<:B<ah@0
-!s11b SCmO[miU>meIh75D9g5[^1
-I`6O@bkVABm6YFUXK_W@BY0
-R5
-R6
-w1681436970
-8E:/amy_code/dac/ad_da/spi/spi_m_tb.v
-FE:/amy_code/dac/ad_da/spi/spi_m_tb.v
-L0 2
-R9
-r1
-!s85 0
-31
-R16
-!s107 E:/amy_code/dac/ad_da/spi/spi_m_tb.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/spi_m_tb.v|
-!i113 0
-R12
 R2

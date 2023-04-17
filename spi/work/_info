@@ -10,75 +10,164 @@ z2
 cModel Technology
 Z0 dD:/modeltech64_2019.2/examples
 T_opt
-!s110 1681695190
-V^0W:9]Y^QJPZz5X_zAgEn2
-Z1 04 6 4 work adc_tb fast 0
-=1-e0d55ee483ee-643ca1d3-1e7-cb8
-Z2 o-quiet -auto_acc_if_foreign -work work +acc
-Z3 tCvgOpt 0
+!s110 1681723737
+VkhffaBPCZEkWY4]^<PPHm2
+04 8 4 work clock_tb fast 0
+=1-e0d55ee483ee-643d1158-342-504c
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
 n@_opt
-Z4 OL;O;2019.2;69
+Z3 OL;O;2019.2;69
 T_opt1
 !s110 1681663246
 V@HeIbKL`=PfW`mNcAE29R1
-R1
+Z4 04 6 4 work adc_tb fast 0
 =1-98e743053f68-643c250e-24a-3ad8
+R1
 R2
-R3
 n@_opt1
 OL;O;2020.4;71
 R0
 T_opt2
 !s110 1681464434
 VXbhkQ^JNhzz3U1i^MCYj^2
-R1
-=1-e0d55ee483ee-64391c72-1e3-7b8
-R2
-R3
-n@_opt2
 R4
+=1-e0d55ee483ee-64391c72-1e3-7b8
+R1
+R2
+n@_opt2
+R3
 R0
-vadc
-Z5 !s110 1681695179
+v_tb
+!s110 1681715372
 !i10b 1
-!s100 zX7FC?4llD8KM<STCM_fE2
-!s11b SPXMJHA:K@c4kmAYa1jQE0
-I>04Dn4_6QZo9dSN@6kGQ;3
-Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 dE:/amy_code/dac/ad_da/spi
-w1681695068
-8E:/amy_code/dac/ad_da/spi/adc.v
-FE:/amy_code/dac/ad_da/spi/adc.v
-L0 5
-Z8 OL;L;2019.2;69
+!s100 f;]ZHV8n3cf<]Ce]XbW=K0
+!s11b TZiIOJ=@]jFaDeKWUkMWC2
+IU6g3k^[0[M5=gFZFCF5R=1
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 dE:/amy_code/dac/ad_da/spi
+w1681715076
+Z7 8E:/amy_code/verilog/clock_tb.v
+Z8 FE:/amy_code/verilog/clock_tb.v
+L0 2
+Z9 OL;L;2019.2;69
 r1
 !s85 0
 31
-Z9 !s108 1681695179.000000
+!s108 1681715372.000000
+Z10 !s107 E:/amy_code/verilog/clock_tb.v|
+Z11 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/verilog/clock_tb.v|
+!i113 0
+Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@_tb
+vadc
+Z13 !s110 1681723724
+!i10b 1
+!s100 <hVbgPM@Rc:4SHCRoL0Ge3
+!s11b SPXMJHA:K@c4kmAYa1jQE0
+IVhD<4c0J^5bcMQfWV8z3E3
+R5
+R6
+w1681696310
+8E:/amy_code/dac/ad_da/spi/adc.v
+FE:/amy_code/dac/ad_da/spi/adc.v
+L0 10
+R9
+r1
+!s85 0
+31
+Z14 !s108 1681723724.000000
 !s107 E:/amy_code/dac/ad_da/spi/adc.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/adc.v|
 !i113 0
-Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
+R12
+R2
 vadc_tb
-R5
+R13
 !i10b 1
 !s100 9R3h0];35jHGhfQ5AN9GS0
 !s11b 4Kc;Lf8HhY]]?lM;I32bU3
 IN>;dMT;GUzd0d=6LlRIVd3
+R5
 R6
-R7
 w1681691820
 8E:/amy_code/dac/ad_da/spi/adc_tb.v
 FE:/amy_code/dac/ad_da/spi/adc_tb.v
 L0 2
-R8
+R9
 r1
 !s85 0
 31
-R9
+R14
 !s107 E:/amy_code/dac/ad_da/spi/adc_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/spi/adc_tb.v|
 !i113 0
+R12
+R2
+vclock
+Z15 !s110 1681723725
+!i10b 1
+!s100 0L6BFOSg>GnI6cU@oNjmj0
+!s11b J1ba2n`l]Je9aCBERlFOg0
+IR1A7RfZPjigB3jUI?bNA=2
+R5
+R6
+w1681723687
+8E:/amy_code/verilog/clock.v
+FE:/amy_code/verilog/clock.v
+L0 7
+R9
+r1
+!s85 0
+31
+Z16 !s108 1681723725.000000
+!s107 E:/amy_code/verilog/clock.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/verilog/clock.v|
+!i113 0
+R12
+R2
+vclock_tb
+R15
+!i10b 1
+!s100 d40_85zR1?jS04dnA[mfZ2
+!s11b OLSjVN;M;:VQ`Rc:Q_Sc93
+I:?N7;;>f8Y`<9:ZkATeAC2
+R5
+R6
+w1681715426
+R7
+R8
+L0 2
+R9
+r1
+!s85 0
+31
+R16
 R10
-R3
+R11
+!i113 0
+R12
+R2
+vrst
+R15
+!i10b 1
+!s100 z]meOZJjgRlLZDXJ^GTj`1
+!s11b dXB9RFc5HNbmQd?Y7C1G^1
+IPL2kVa3^XaM:?lBmd7EbI3
+R5
+R6
+w1681715162
+8E:/amy_code/verilog/rst.v
+FE:/amy_code/verilog/rst.v
+L0 12
+R9
+r1
+!s85 0
+31
+R16
+!s107 E:/amy_code/verilog/rst.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/verilog/rst.v|
+!i113 0
+R12
+R2

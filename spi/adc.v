@@ -88,7 +88,7 @@ assign cov_to_acq_start = state_c==cov && (rvs);
 
 
 
-//计数器
+//计数器cnt:用于记录固定的采集时长和采集到的数据
 //---------------------------------------------------------------------
     always @(posedge clk or negedge rst_n)begin
     if(!rst_n)begin
@@ -105,7 +105,7 @@ assign cov_to_acq_start = state_c==cov && (rvs);
 assign add_cnt = state_c == acq;
 assign end_cnt = add_cnt && cnt == t_acq-1;
 
-//计数器1
+//计数器cnt1:用于记录要输出的命令。
 always @(posedge clk or negedge rst_n)begin
     if(!rst_n)begin
         cnt1 <= 0;
@@ -150,7 +150,7 @@ end
 
 
 
-//
+//按sclk时序接受采集到的数据
 always  @(posedge sclk or negedge rst_n)begin
     if(!rst_n)begin
         dout <= 0;

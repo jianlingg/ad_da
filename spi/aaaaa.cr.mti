@@ -1,8 +1,36 @@
-E:/amy_code/dac/ad_da/spi/adc_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/dac/ad_da/spi/adc_tb.v
+E:/amy_code/dac/ad_da/spi/adc.v {1 {vlog -work work -vopt -stats=none E:/amy_code/dac/ad_da/spi/adc.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module adc
+
+Top level modules:
+	adc
+
+} {} {}} E:/amy_code/verilog/clock.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/clock.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module clock
+
+Top level modules:
+	clock
+
+} {} {}} E:/amy_code/dac/ad_da/spi/adc_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/dac/ad_da/spi/adc_tb.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module adc_tb
 
 Top level modules:
 	adc_tb
+
+} {} {}} E:/amy_code/verilog/clock_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/clock_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module clock_tb
+
+Top level modules:
+	clock_tb
+
+} {} {}} E:/amy_code/verilog/rst.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/rst.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module rst
+
+Top level modules:
+	rst
 
 } {} {}}

@@ -1,8 +1,8 @@
-E:/intelFPGA_lite_P/ad_da/spi/adc.v {1 {vlog -work work -vopt -stats=none E:/intelFPGA_lite_P/ad_da/spi/adc.v
-Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
--- Compiling module adc
+E:/amy_code/dac/ad_da/spi/adc_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/dac/ad_da/spi/adc_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module adc_tb
 
 Top level modules:
-	adc
+	adc_tb
 
 } {} {}}

@@ -81,6 +81,8 @@ assign rst_to_acq_start = state_c==rst && (rst_n);
 assign acq_to_cov_start = state_c==acq && (end_cnt);
 assign cov_to_acq_start = state_c==cov && (rvs);
 
+
+
 //¼ÆÊýÆ÷
 //---------------------------------------------------------------------
     always @(posedge clk or negedge rst_n)begin
@@ -162,7 +164,7 @@ end
             mosi <= reah[31-cnt1];
         end
         else begin
-            mosi <= 32'bz;
+            mosi <= 1'b0;
         end
     end
 

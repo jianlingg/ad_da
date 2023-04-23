@@ -1,0 +1,71 @@
+E:/amy_code/verilog/data_clock/top.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/top.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}} E:/amy_code/verilog/data_clock/shuma_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/shuma_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module shuma_tb
+
+Top level modules:
+	shuma_tb
+
+} {} {}} E:/amy_code/verilog/data_clock/top_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/top_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module top_tb
+
+Top level modules:
+	top_tb
+
+} {} {}} E:/amy_code/verilog/data_clock/key.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/key.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module key
+
+Top level modules:
+	key
+
+} {} {}} E:/amy_code/verilog/data_clock/clock_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/clock_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module clock_tb
+
+Top level modules:
+	clock_tb
+
+} {} {}} E:/amy_code/verilog/data_clock/bin_bcd.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/bin_bcd.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module bin_bcd
+
+Top level modules:
+	bin_bcd
+
+} {} {}} E:/amy_code/verilog/data_clock/rst.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/rst.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module rst
+
+Top level modules:
+	rst
+
+} {} {}} E:/amy_code/verilog/data_clock/hc595.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/hc595.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module hc595
+
+Top level modules:
+	hc595
+
+} {} {}} E:/amy_code/verilog/data_clock/shuma.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/shuma.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module shuma
+
+Top level modules:
+	shuma
+
+} {} {}} E:/amy_code/verilog/data_clock/bin_bcd_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/verilog/data_clock/bin_bcd_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module bin_bcd_tb
+
+Top level modules:
+	bin_bcd_tb
+
+} {} {}}

@@ -1,0 +1,15 @@
+E:/amy_code/dac/ad_da/dac/rst.v {1 {vlog -work work -vopt -stats=none E:/amy_code/dac/ad_da/dac/rst.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module rst
+
+Top level modules:
+	rst
+
+} {} {}} E:/amy_code/dac/ad_da/dac/dac_c_tb.v {1 {vlog -work work -vopt -stats=none {E:\amy_code\dac\ad_da\dac\dac_c_tb.v}
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module dac_c_tb
+
+Top level modules:
+	dac_c_tb
+
+} {} {}}

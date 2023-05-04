@@ -1,0 +1,7 @@
+Thu Apr 27 10:40:44 CST 2023
+Trace back: can't read "Project(SaveCompileReport)": no such element in array
+    while executing
+".vcop Eval Project::createDialog"
+    (menu invoke)
+  <2:D:/modeltech64_2019.2/win64/tk8.6/bgerror.tcl:106: ::tkerror {can't read "Project(SaveCompileReport)": no such element in array}
+  <1:eval:1: ::tk::dialog::error::bgerror {can't read "Project(SaveCompileReport)": no such element in array}

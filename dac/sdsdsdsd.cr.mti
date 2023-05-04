@@ -5,7 +5,14 @@ Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 Top level modules:
 	rst
 
-} {} {}} E:/amy_code/dac/ad_da/dac/dac_c_tb.v {1 {vlog -work work -vopt -stats=none {E:\amy_code\dac\ad_da\dac\dac_c_tb.v}
+} {} {}} E:/amy_code/dac/ad_da/dac/dac_c.v {1 {vlog -work work -vopt -stats=none E:/amy_code/dac/ad_da/dac/dac_c.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module dac_c
+
+Top level modules:
+	dac_c
+
+} {} {}} E:/amy_code/dac/ad_da/dac/dac_c_tb.v {1 {vlog -work work -vopt -stats=none E:/amy_code/dac/ad_da/dac/dac_c_tb.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module dac_c_tb
 

@@ -8,79 +8,90 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dD:/modeltech64_2019.2/examples
+Z0 dD:/modeltech64_2019.2/examples
 T_opt
-!s110 1682241904
-V_<PG0574ehJYd5T6D[Wg32
-04 8 4 work dac_c_tb fast 0
-=1-e0d55ee483ee-6444f970-31b-53ac
-o-quiet -auto_acc_if_foreign -work work +acc
-Z0 tCvgOpt 0
+!s110 1682311308
+Vk?52ePPDe3;l3ilQhWUB;0
+Z1 04 8 4 work dac_c_tb fast 0
+=1-e0d55ee483ee-6446088b-39a-e20
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
 n@_opt
-OL;O;2019.2;69
-vdac_c
-Z1 !s110 1682241901
-!i10b 1
-!s100 k[R_D[YiD79LoOWIXFz@f3
-!s11b ^f[UaD;5nI7GLBK1FkGa`1
-IMhHVk^<75gR[CL82<5:l20
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dE:/amy_code/dac/ad_da/dac
-w1682241894
-8dac_c.v
-Fdac_c.v
-L0 5
-Z4 OL;L;2019.2;69
-r1
-!s85 0
-31
-Z5 !s108 1682241901.000000
-!s107 dac_c.v|
-!s90 -reportprogress|300|dac_c.v|
-!i113 0
-Z6 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z4 OL;O;2019.2;69
 R0
-vdac_c_tb
+T_opt1
+!s110 1682316628
+V`o[D@FeB9iN61@6=]:g6P3
 R1
-!i10b 1
-!s100 OPW`l^FLM04T]:K?1XF_13
-!s11b VKLYhcC6KSQZTzS<8DAaJ2
-I63Ge0<D5;cN`Af9bZ7dB52
+=1-e0d55ee483ee-64461d54-1d6-1108
 R2
 R3
-w1682240540
-8dac_c_tb.v
-Fdac_c_tb.v
-L0 2
+n@_opt1
 R4
+R0
+vdac_c
+Z5 !s110 1682563286
+!i10b 1
+!s100 F=Y9igO1@8D3<52O8CbU:1
+!s11b eAboSH1ISMY]QMW]=ZP3]3
+I;7OP:V_LPT=8[`ca<Qe6S1
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 dE:/amy_code/dac/ad_da/dac
+w1682408202
+8E:/amy_code/dac/ad_da/dac/dac_c.v
+FE:/amy_code/dac/ad_da/dac/dac_c.v
+L0 5
+Z8 OL;L;2019.2;69
 r1
 !s85 0
 31
-R5
-!s107 dac_c_tb.v|
-!s90 -reportprogress|300|dac_c_tb.v|
+Z9 !s108 1682563286.000000
+!s107 E:/amy_code/dac/ad_da/dac/dac_c.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/dac/dac_c.v|
 !i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vdac_c_tb
+R5
+!i10b 1
+!s100 M_`i68Q=nA?7Nk?HDEB_@1
+!s11b 2f9Uh_55N82UT@hT[;7N:3
+IBWfO;j>iWjbA;KS@S8lEH2
 R6
-R0
+R7
+w1682312815
+8E:/amy_code/dac/ad_da/dac/dac_c_tb.v
+FE:/amy_code/dac/ad_da/dac/dac_c_tb.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/amy_code/dac/ad_da/dac/dac_c_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/dac/dac_c_tb.v|
+!i113 0
+R10
+R3
 vrst
-!s110 1682240927
+R5
 !i10b 1
 !s100 DPf0EKJ7lAQD`E==L_Fo<2
 !s11b F^n_CF7_a96[NP:5KG@ji0
 IH5KnJBL^L2jhYH5R3WDOJ1
-R2
-R3
+R6
+R7
 w1681887227
 8E:/amy_code/dac/ad_da/dac/rst.v
 FE:/amy_code/dac/ad_da/dac/rst.v
 L0 12
-R4
+R8
 r1
 !s85 0
 31
-!s108 1682240927.000000
+R9
 !s107 E:/amy_code/dac/ad_da/dac/rst.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/amy_code/dac/ad_da/dac/rst.v|
 !i113 0
-o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R0
+R10
+R3

@@ -15,19 +15,13 @@ module dac_c_tb;
 
     wire      rst;
 
-    //时钟周期，单位为ns，可在此修改时钟周期。
+    //????????ns???????????
     parameter CYCLE    = 20;
 
-    //复位时间，此时表示复位3个时钟周期的时间。
+    //???????????3?????????
     parameter RST_TIME = 10 ;
-    reg din_vlds;
 
-    always  @(posedge clk)begin
-        din_vlds <= din_vld;
-    end
-    
-
-    //待测试的模块例化
+    //????????
 
     rst rst_u(
     //global clock
@@ -44,7 +38,8 @@ module dac_c_tb;
 
     //user interface
     . din(din),
-    . din_vld(din_vlds),
+    . din_vld(din_vld),
+    . rdy(rdy),
 
     . cs(cs),
     . sclk(sclk),
@@ -52,13 +47,25 @@ module dac_c_tb;
     . ldac(ldac)
 );
 
+    wire rdreq = rdy;
 
-    //生成本地时钟50M
+    
+    always  @(posedge clk or negedge rst_n)begin
+        if(!rst)begin
+            din_vld <= 0;
+        end
+        else begin
+            din_vld <= rdreq;
+        end
+    end
+
+
+    //??????50M
     initial clk = 1;
     always #(CYCLE/2) clk=~clk;
     
 
-    //产生复位信号
+    //??????
     initial begin
         rst_n = 1;
         #2;
@@ -67,15 +74,9 @@ module dac_c_tb;
         rst_n = 1;
     end
 
-    //产生输入信号
+    //??????
     initial begin
-        #2;
         din = 16'b1100_0101_1111_0010;
-        din_vld = 0;
-        #(CYCLE*100);
-        din_vld = 1;
-        #(CYCLE*1);
-        din_vld = 0;
         #(CYCLE*10000);
         
 
